@@ -42,18 +42,9 @@ La plateforme permet de :
 ## Modèles Django
 
 # models.py (extrait simplifié)
-class Service(models.Model):
-    titre = models.CharField(max_length=100)
-    description = models.TextField()
-
-class Contact(models.Model):
-    nom = models.CharField(max_length=100)
-    email = models.EmailField()
-    telephone = models.CharField(max_length=20)
-    message = models.TextField()
-    date_envoye = models.DateTimeField(auto_now_add=True)
-
-class Temoignage(models.Model):
-    nom = models.CharField(max_length=100)
-    contenu = models.TextField()
-    date = models.DateField(auto_now_add=True)
+le modele Service: il a des champs suivants (titre et description)
+    
+le model Contact: il a comme champs nom, email, telephone, message, date d'envoi
+    
+le modele Temoignage: aura comme champs nom du temoin, contenu ou temoignage, date
+    
