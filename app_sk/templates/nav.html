@@ -1,0 +1,50 @@
+
+
+
+<style>
+    #nav {
+        background-color: rgba(13, 22, 13, 0.7);
+        padding-top: 0px;
+        padding-bottom: 0;
+        border-bottom: 1px solid;
+        
+    }
+    #offcanvasNavbar {
+        width: 70%;
+    }
+</style>
+<nav id="nav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <!-- Nom ou logo du site -->
+        <a class="navbar-brand fw-bold text-white" href="#" style="border-right: 10px solid white;">
+            <h1>Soins-<span class="badge badge-circle bg-success">K</span></h1>
+        </a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end offcanvas-md-8 offcanvas-lg-4 text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+
+        <!-- Contenu -->
+            <!-- <div class="collapse navbar-collapse p-2 rounded" id="kam1"> -->
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white {% if current_page == 'homeview' %}active{% endif %}" 
+                        href=""><h3>Home</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white {% if current_page == 'homeview' %}active{% endif %}" 
+                        href=""><h3>Contact</h3></a>
+                    </li>
+                    
+                </ul>
+            </div>    
+    </div>
+</nav>
+
