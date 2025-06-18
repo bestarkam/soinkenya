@@ -1,7 +1,47 @@
-from django.forms import ModelForm
-from app_sk.models import Contact
+from django.forms import ModelForm, inlineformset_factory
+from app_sk.models import Contact, Service, DetailService
+from django import forms
 
 class ContactForm(ModelForm):
     class Meta:
         model = Contact
         fields = '__all__'
+
+class ServiceForm(ModelForm):
+    class Meta:
+        model = Service
+        fields = ['nom', 'description']
+        widgets = {
+            'nom': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Nom du service'
+            }),
+            'description': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Description du service',
+                'rows': 3
+            })
+        }
+
+class DetailServiceForm(ModelForm):
+    class Meta:
+        model = DetailService
+        fields = ['service', 'detail']
+        widgets = {
+            'service': forms.Select(attrs={
+                'class': 'form-select'
+            }),
+            'detail': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Détail du service'
+            })
+        }
+
+DetailServiceFormSet = inlineformset_factory(
+    Service,
+    DetailService,
+    form=DetailServiceForm,
+    extra=1,  
+    can_delete=True  
+)
+

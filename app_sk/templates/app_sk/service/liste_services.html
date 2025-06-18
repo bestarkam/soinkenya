@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% block title %}Nos Services | SoinsKenya{% endblock %}
+{% load static %}
+
+{% block content %}
+<style>
+    :root {
+        --green: #1a5d1a;
+        --green-light: #e8f5e9;
+        --green-dark: #0d3d0d;
+        --white: #FFFFFF;
+    }
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+    }
+    
+    .services-hero {
+        background: linear-gradient(rgba(26, 93, 26, 0.9), rgba(26, 93, 26, 0.9)), 
+                    url('{% static "img/medical-bg.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 5rem 0;
+        margin-top: 70px;
+        margin-bottom: 4rem;
+    }
+    
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    
+    .service-card {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .service-header {
+        background-color: var(--green);
+        color: white;
+        padding: 1.5rem;
+        position: relative;
+    }
+    
+    .service-header h3 {
+        margin: 0;
+        font-size: 1.4rem;
+    }
+    
+    .service-body {
+        padding: 1.5rem;
+        background-color: white;
+        flex-grow: 1;
+    }
+    
+    .service-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .service-features li {
+        padding: 0.75rem 0;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .feature-icon {
+        color: var(--green);
+        margin-right: 0.75rem;
+        font-size: 1rem;
+        margin-top: 3px;
+        flex-shrink: 0;
+    }
+    
+    .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        border: 1px dashed #ddd;
+        grid-column: 1 / -1;
+    }
+    
+    @media (max-width: 768px) {
+        .services-hero {
+            padding: 3rem 0;
+        }
+        
+        .services-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .service-header {
+            padding: 1.25rem;
+        }
+        
+        .service-body {
+            padding: 1.25rem;
+        }
+    }
+    
+</style>
+
+<div class="container-fluid px-0">
+    {% include 'nav.html' with current_page="service" %}
+    
+    <!-- Hero Section -->
+    <section class="services-hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Nos Services Médicaux</h1>
+            <p class="lead mb-0">Un accompagnement complet pour votre traitement au Kenya</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <div class="services-grid mb-5">
+        {% if services %}
+            {% for service in services %}
+                <article class="service-card">
+                    <header class="service-header">
+                        <h3>
+                            <i class="fas fa-medal me-2"></i>
+                            {{ service.nom }}
+                        </h3>
+                    </header>
+                    <div class="service-body">
+                        <ul class="service-features">
+                            {% for detail in service.services.all %}
+                                <li>
+                                    <span class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                    <span>{{ detail.detail }}</span>
+                                </li>
+                            {% empty %}
+                                <li class="text-muted">
+                                    <span class="feature-icon">
+                                        <i class="fas fa-info-circle"></i>
+                                    </span>
+                                    <span>Aucun détail disponible</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <hr style="color: black; margin-top: 0px;">
+                    <div class="add-border">
+                        <a href="#" class=" btn btn-dark text-center">Demander ce service</a>
+                    </div>
+                </article>
+            {% endfor %}
+        {% else %}
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <i class="fas fa-clipboard-list fa-3x mb-3"></i>
+                </div>
+                <h3>Nos services sont en préparation</h3>
+                <p class="text-muted">Nous mettons tout en œuvre pour vous proposer une offre complète très prochainement</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% include 'footer.html' %}
+{% endblock %}

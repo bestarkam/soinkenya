@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.mail import send_mail
-from app_sk.forms import ContactForm
+from app_sk.forms import ContactForm, ServiceForm, DetailServiceFormSet
 from app_sk.models import Service, Temoignage, Contact
 from django.conf import settings
 
@@ -14,6 +14,35 @@ def index(request):
     }
     return render(request, 'app_sk/index.html', context)
 
+ 
+
+def ajouter_service(request):
+    if request.method == 'POST':
+        service_form = ServiceForm(request.POST)
+        formset = DetailServiceFormSet(request.POST)
+
+        if service_form.is_valid() and formset.is_valid():
+            service = service_form.save()
+            formset.instance = service
+            formset.save()
+            return redirect('app_sk:index')
+    else:
+        service_form = ServiceForm()
+        formset = DetailServiceFormSet()
+
+    return render(request, 'app_sk/service/ajouter_service.html', {
+        'service_form': service_form,
+        'formset': formset,
+    })
+
+
+def liste_services(request):
+    services = Service.objects.prefetch_related('services')
+    context = {
+        'services': services,
+        'current_page' : 'service'
+    }
+    return render(request, 'app_sk/service/liste_services.html', context)
 
 
 def contact(request):
