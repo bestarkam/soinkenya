@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <!-- Nom ou logo du site -->
         <a class="navbar-brand fw-bold text-white" href="#" style="border-right: 10px solid white;">
-            <h1>Soins-<span class="badge badge-circle bg-success">K</span></h1>
+            <h1>Veza</h1>
         </a>
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -35,12 +35,12 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-white {% if current_page == 'homeview' %}active{% endif %}" 
-                        href=""><h3>Home</h3></a>
+                        <a class="nav-link text-white {% if current_page == 'index' %}active{% endif %}" 
+                        href="{% url 'app_sk:index' %}"><h3>Home</h3></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white {% if current_page == 'homeview' %}active{% endif %}" 
-                        href=""><h3>Contact</h3></a>
+                        <a class="nav-link text-white {% if current_page == 'contact' %}active{% endif %}" 
+                        href="{% url 'app_sk:contact' %}"><h3>Contact</h3></a>
                     </li>
                     
                 </ul>

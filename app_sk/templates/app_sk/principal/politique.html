@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block title %}Politique de Confidentialité{% endblock %}
+{% load static %}
+
+{% block content %}
+<style>
+    :root {
+        --green: #1a5d1a;
+        --green-light: #e8f5e9;
+        --green-dark: #0d3d0d;
+        --black: #212121;
+        --white: #FFFFFF;
+    }
+    
+    .privacy-container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+    }
+    
+    .privacy-header {
+        background-color: var(--green);
+        color: white;
+        padding: 2rem;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: 0;
+    }
+    
+    .privacy-content {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .section-title {
+        color: var(--green);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        border-bottom: 2px solid var(--green-light);
+        padding-bottom: 0.5rem;
+    }
+    
+    .highlight-box {
+        background-color: var(--green-light);
+        border-left: 4px solid var(--green);
+        padding: 1rem;
+        margin: 1.5rem 0;
+        border-radius: 0 4px 4px 0;
+    }
+    
+    @media (max-width: 768px) {
+        .privacy-header {
+            padding: 1.5rem;
+        }
+        
+        .privacy-content {
+            padding: 1.5rem;
+        }
+    }
+</style>
+
+<div class="privacy-container">
+    <div class="privacy-header text-center">
+        <h1><i class="fas fa-shield-alt me-2"></i> Politique de Confidentialité</h1>
+        <p class="mb-0">Dernière mise à jour : {% now "j F Y" %}</p>
+    </div>
+    
+    <div class="privacy-content">
+        <div class="highlight-box">
+            <p class="mb-0"><strong>Soins Kenya</strong> s'engage à protéger la confidentialité de vos données médicales et personnelles conformément aux réglementations en vigueur en RDC et au Kenya.</p>
+        </div>
+        
+        <h3 class="section-title">1. Collecte des Informations</h3>
+        <p>Nous collectons les informations suivantes pour faciliter votre prise en charge médicale :</p>
+        <ul>
+            <li>Informations personnelles (nom, prénom, date de naissance)</li>
+            <li>Coordonnées (adresse, email, téléphone)</li>
+            <li>Données médicales nécessaires à votre traitement</li>
+            <li>Historique des communications avec notre service</li>
+        </ul>
+        
+        <h3 class="section-title">2. Utilisation des Données</h3>
+        <p>Vos données sont utilisées exclusivement pour :</p>
+        <ul>
+            <li>Coordonner votre prise en charge médicale au Kenya</li>
+            <li>Vous contacter concernant votre dossier</li>
+            <li>Améliorer nos services</li>
+            <li>Remplir nos obligations légales</li>
+        </ul>
+        
+        <h3 class="section-title">3. Partage des Informations</h3>
+        <p>Vos données peuvent être partagées avec :</p>
+        <ul>
+            <li>Les établissements médicaux partenaires au Kenya</li>
+            <li>Les professionnels de santé impliqués dans votre traitement</li>
+            <li>Les services administratifs nécessaires à l'organisation de votre séjour</li>
+        </ul>
+        <p><strong>Nous ne vendons ni ne louons vos données à des tiers.</strong></p>
+        
+        <h3 class="section-title">4. Sécurité des Données</h3>
+        <p>Nous mettons en œuvre des mesures techniques et organisationnelles strictes :</p>
+        <ul>
+            <li>Chiffrement des données sensibles</li>
+            <li>Accès restreint au personnel autorisé</li>
+            <li>Protocoles de sécurité conformes aux standards médicaux</li>
+        </ul>
+        
+        <h3 class="section-title">5. Vos Droits</h3>
+        <p>Conformément à la loi, vous pouvez :</p>
+        <ul>
+            <li>Accéder à vos données personnelles</li>
+            <li>Demander leur rectification</li>
+            <li>Vous opposer à leur traitement</li>
+            <li>Demander leur suppression sous certaines conditions</li>
+        </ul>
+        <p>Pour exercer ces droits, contactez notre délégué à la protection des données : <strong>donnees@soinskenya.cd</strong></p>
+        
+        <h3 class="section-title">6. Conservation</h3>
+        <p>Vos données sont conservées :</p>
+        <ul>
+            <li>5 ans pour les données administratives (obligation légale)</li>
+            <li>20 ans pour les données médicales (conformément aux standards médicaux)</li>
+        </ul>
+        
+        <div class="highlight-box mt-4">
+            <p class="mb-0"><i class="fas fa-info-circle text-green me-2"></i> Pour toute question concernant cette politique, contactez-nous à <strong>contact@soinskenya.cd</strong> ou au <strong>+243 812 154 555</strong>.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

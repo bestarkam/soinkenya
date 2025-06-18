@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% block title %}Conditions d'Utilisation{% endblock %}
+{% load static %}
+
+{% block content %}
+<style>
+    :root {
+        --green: #1a5d1a;
+        --green-light: #e8f5e9;
+        --green-dark: #0d3d0d;
+        --black: #212121;
+        --white: #FFFFFF;
+    }
+    
+    .terms-container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+    }
+    
+    .terms-header {
+        background-color: var(--green);
+        color: white;
+        padding: 2rem;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: 0;
+    }
+    
+    .terms-content {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .section-title {
+        color: var(--green);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        border-bottom: 2px solid var(--green-light);
+        padding-bottom: 0.5rem;
+    }
+    
+    .highlight-box {
+        background-color: var(--green-light);
+        border-left: 4px solid var(--green);
+        padding: 1rem;
+        margin: 1.5rem 0;
+        border-radius: 0 4px 4px 0;
+    }
+    
+    ol.terms-list {
+        counter-reset: item;
+        padding-left: 0;
+    }
+    
+    ol.terms-list > li {
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+    
+    ol.terms-list > li:before {
+        content: counters(item, ".") ". ";
+        counter-increment: item;
+        font-weight: bold;
+        color: var(--green);
+    }
+    
+    @media (max-width: 768px) {
+        .terms-header {
+            padding: 1.5rem;
+        }
+        
+        .terms-content {
+            padding: 1.5rem;
+        }
+    }
+</style>
+
+<div class="terms-container">
+    <div class="terms-header text-center">
+        <h1><i class="fas fa-file-contract me-2"></i> Conditions Générales d'Utilisation</h1>
+        <p class="mb-0">En vigueur depuis le {% now "j F Y" %}</p>
+    </div>
+    
+    <div class="terms-content">
+        <div class="highlight-box">
+            <p class="mb-0"><strong>En utilisant les services de Soins Kenya</strong>, vous acceptez sans réserve les présentes conditions générales d'utilisation.</p>
+        </div>
+        
+        <ol class="terms-list">
+            <li>
+                <h3 class="section-title">Objet</h3>
+                <p>Soins Kenya facilite l'accès aux soins médicaux au Kenya pour les patients congolais atteints de cancer en fournissant :</p>
+                <ul>
+                    <li>Une mise en relation avec des établissements médicaux kényans</li>
+                    <li>Un accompagnement administratif et logistique</li>
+                    <li>Un suivi du parcours médical</li>
+                </ul>
+            </li>
+            
+            <li>
+                <h3 class="section-title">Engagements de Soins Kenya</h3>
+                <p>3.1 Nous nous engageons à :</p>
+                <ul>
+                    <li>Vous proposer des établissements médicaux partenaires de qualité</li>
+                    <li>Transmettre votre dossier médical complet aux professionnels de santé</li>
+                    <li>Vous assister dans les démarches administratives</li>
+                </ul>
+                
+                <p>3.2 Limites de responsabilité :</p>
+                <ul>
+                    <li>Nous ne sommes pas prestataires de soins médicaux</li>
+                    <li>Les décisions thérapeutiques relèvent des médecins traitants</li>
+                    <li>Nous ne garantissons pas les résultats des traitements</li>
+                </ul>
+            </li>
+            
+            <li>
+                <h3 class="section-title">Engagements de l'Utilisateur</h3>
+                <p>4.1 Vous vous engagez à :</p>
+                <ul>
+                    <li>Fournir des informations médicales exactes et complètes</li>
+                    <li>Respecter les prescriptions médicales</li>
+                    <li>Payer les frais de traitement selon les modalités convenues</li>
+                </ul>
+            </li>
+            
+            <li>
+                <h3 class="section-title">Modalités Financières</h3>
+                <p>5.1 Nos services incluent :</p>
+                <ul>
+                    <li>Une consultation initiale gratuite</li>
+                    <li>L'établissement d'un devis médical personnalisé</li>
+                </ul>
+                
+                <p>5.2 Les frais à votre charge comprennent :</p>
+                <ul>
+                    <li>Les honoraires médicaux</li>
+                    <li>Les frais d'hospitalisation</li>
+                    <li>Les frais logistiques (transport, hébergement si applicable)</li>
+                </ul>
+            </li>
+            
+            <li>
+                <h3 class="section-title">Annulation et Remboursement</h3>
+                <p>6.1 Toute annulation doit être notifiée par écrit</p>
+                <p>6.2 Les frais engagés (billets d'avion, réservations) ne sont pas remboursables</p>
+                <p>6.3 Les frais médicaux déjà payés aux établissements kényans suivent leur politique de remboursement</p>
+            </li>
+            
+            <li>
+                <h3 class="section-title">Litiges et Droit Applicable</h3>
+                <p>7.1 Tout litige sera soumis en priorité à une médiation</p>
+                <p>7.2 À défaut d'accord, les tribunaux de Goma sont seuls compétents</p>
+                <p>7.3 Le droit congolais est applicable</p>
+            </li>
+        </ol>
+        
+        <div class="highlight-box mt-4">
+            <p class="mb-0"><i class="fas fa-exclamation-triangle text-green me-2"></i> <strong>Important :</strong> Ces conditions ne remplacent pas un contrat de soins avec les établissements médicaux kényans qui vous seront communiqués séparément.</p>
+        </div>
+        
+        <div class="text-center mt-4">
+            <p>Pour toute question concernant ces conditions : <strong>contact@soinskenya.cd</strong></p>
+            <p><i class="fas fa-phone-alt text-green me-2"></i> <strong>+243 </strong> | <strong>+243 </strong></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -6,41 +6,43 @@
 {% block content %}
 <style>
     body {
-        background-color: rgb(238, 232, 232);
+        background-color: #f8f9fa;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: black;
+        color: #333;
     }
     
-    .bg-orange {
-        background-color: rgb(185, 133, 35) !important;
+    .bg-green {
+        background-color: #1a5d1a !important; /* Vert foncé */
     }
+    
     .roundform {
         border: 1px;
         border-radius: 10px;
     }
     
-    .bg-orange-dark {
-        background-color: rgb(129, 87, 9);
+    .bg-green-dark {
+        background-color: #0d3d0d; /* Vert encore plus foncé */
     }
     
-    .text-orange {
-        color: orange;
+    .text-green {
+        color: #1a5d1a;
     }
     
-    .btn-orange {
-        background-color: orange;
+    .btn-green {
+        background-color: #1a5d1a;
         color: white;
         border: none;
     }
     
-    .btn-orange:hover {
-        background-color: orange;
+    .btn-green:hover {
+        background-color: #0d3d0d;
         color: white;
     }
     
     .contact-card {
-        border-left: 4px solid orange;
+        border-left: 4px solid #1a5d1a;
         transition: all 0.3s ease;
+        background-color: white;
     }
     
     .contact-card:hover {
@@ -49,8 +51,18 @@
     }
     
     .form-control:focus {
-        border-color: var(--orange);
-        box-shadow: 0 0 0 0.25rem rgba(255, 122, 0, 0.25);
+        border-color: #1a5d1a;
+        box-shadow: 0 0 0 0.25rem rgba(26, 93, 26, 0.25);
+    }
+    
+    .social-icons .btn-outline-dark {
+        border-color: #1a5d1a;
+        color: #1a5d1a;
+    }
+    
+    .social-icons .btn-outline-dark:hover {
+        background-color: #1a5d1a;
+        color: white;
     }
 </style>
 
@@ -58,10 +70,10 @@
 <div class="container-fluid">
     {% include 'nav.html' with current_page="contact" %}
     <div class="container-fluid" style="margin-top: 90px;">
-        <header class="bg-orange roundform text-white text-center py-4">
+        <header class="bg-green roundform text-white text-center py-4">
             <div class="container-fluid">
                 <h1 class="display-5 fw-bold"><i class="fas fa-headset me-2"></i>Contactez-nous</h1>
-                <p class="lead">Nous sommes là pour répondre à toutes vos questions sur nos services.</p>
+                <p class="lead">Nous sommes là pour répondre à toutes vos questions sur nos services de traitement du cancer.</p>
             </div>
         </header>
 
@@ -72,33 +84,34 @@
                 <div class="col-lg-5">
                     <div class="card mb-4 contact-card">
                         <div class="card-body">
-                            <h3 class="card-title text-orange"><i class="fas fa-info-circle me-2"></i>Informations de contact</h3>
-                            <p class="card-text">N'hésitez pas à nous contacter par téléphone, email ou via nos réseaux sociaux.</p>
+                            <h3 class="card-title text-green"><i class="fas fa-info-circle me-2"></i>Informations de contact</h3>
+                            <p class="card-text">N'hésitez pas à nous contacter pour toute information concernant votre prise en charge médicale au Kenya.</p>
                             
                             <ul class="list-unstyled">
                                 <li class="mb-3">
-                                    <h5><i class="fas fa-map-marker-alt text-orange me-2"></i> Adresse</h5>
+                                    <h5><i class="fas fa-map-marker-alt text-green me-2"></i> Adresse</h5>
                                     <p>03 Blvr Kanyamuhanga, Q/LES VOLCANS, Ville de Goma</p>
+                                    <p>Adresse Kenya</p>
                                 </li>
                                 <li class="mb-3">
-                                    <h5><i class="fas fa-phone-alt text-orange me-2"></i> Téléphone</h5>
-                                    <p>+243 995 451 555</p>
-                                    <p>+243 812 154 555</p>
+                                    <h5><i class="fas fa-phone-alt text-green me-2"></i> Téléphone</h5>
+                                    <p>+243 998 947 446</p>
+                                    <p>+243 978 230 764</p>
                                 </li>
                                 <li class="mb-3">
-                                    <h5><i class="fas fa-envelope text-orange me-2"></i> Email</h5>
-                                    <p>Ejima.services@gmail.com</p>
-                                    <p>Eddyshafali1003@gmail.com</p>
+                                    <h5><i class="fas fa-envelope text-green me-2"></i> Email</h5>
+                                    <p>veza-services@gmail.com</p>
+                                    <p>vena@gmail.com</p>
                                 </li>
-                                <li class="mb-3">
-                                    <h5><i class="fas fa-clock text-orange me-2"></i> Heures d'ouverture</h5>
+                                <li class="mb-3" style="display: none;">
+                                    <h5><i class="fas fa-clock text-green me-2"></i> Heures d'ouverture</h5>
                                     <p>Lundi-Vendredi: 8h00-17h00</p>
                                     <p>Samedi: 10h00-15h00</p>
                                 </li>
                             </ul>
                             
                             <div class="social-icons mt-4">
-                                <h5><i class="fas fa-share-alt text-orange me-2"></i>Réseaux sociaux</h5>
+                                <h5><i class="fas fa-share-alt text-green me-2"></i>Réseaux sociaux</h5>
                                 <a href="#" class="btn btn-outline-dark me-2"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#" class="btn btn-outline-dark me-2"><i class="fab fa-twitter"></i></a>
                                 <a href="#" class="btn btn-outline-dark me-2"><i class="fab fa-instagram"></i></a>
@@ -109,9 +122,13 @@
                     
                     <div class="card contact-card">
                         <div class="card-body">
-                            <h3 class="card-title text-orange"><i class="fas fa-map-marked-alt me-2"></i>Localisation</h3>
+                            <h3 class="card-title text-green"><i class="fas fa-map-marked-alt me-2"></i>Localisation</h3>
                             <div class="ratio ratio-16x9">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0813668762786!2d29.23207881436133!3d-1.6817409986493985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c2e7a2469ae4a5%3A0x8ec8e79227374c68!2sGoma!5e0!3m2!1sfr!2scd!4v1717680180000!5m2!1sfr!2scd" allowfullscreen=""></iframe>
+                            </div>
+                            <hr>
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.249378141304!2d36.8073081!3d-1.2920656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d6ba7602c9%3A0x3c78e61844b297bd!2sNairobi%2C%20Kenya!5e0!3m2!1sfr!2ske!4v1718612345678!5m2!1sfr!2ske" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>
@@ -121,92 +138,34 @@
                 <div class="col-lg-7">
                     <div class="card contact-card">
                         <div class="card-body">
-                            <h3 class="card-title text-orange"><i class="fas fa-paper-plane me-2"></i>Envoyez-nous un message</h3>
-                            <p class="card-text">Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+                            <h3 class="card-title text-green"><i class="fas fa-paper-plane me-2"></i>Envoyez-nous un message</h3>
+                            <p class="card-text">Remplissez le formulaire ci-dessous pour toute demande concernant votre traitement médical au Kenya.</p>
                             
-                            <form style="display: none;">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Nom complet <span class="text-danger">*</span></label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                        <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Adresse email <span class="text-danger">*</span></label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                        <input type="email" class="form-control" id="email" placeholder="Votre email" required>
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label">Téléphone</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                                        <input type="tel" class="form-control" id="phone" placeholder="Votre numéro de téléphone">
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label">Sujet</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fas fa-tag"></i></span>
-                                        <select class="form-select" id="subject">
-                                            <option selected>Choisissez un sujet</option>
-                                            <option>Demande d'information</option>
-                                            <option>Support technique</option>
-                                            <option>Réclamation</option>
-                                            <option>Partenariat</option>
-                                            <option>Autre</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" id="message" rows="5" placeholder="Votre message" required></textarea>
-                                </div>
-                                
-                                <div class="d-grid">
-                                    <button type="submit" class="btn bg-orange text-white btn-lg">
-                                        <i class="fas fa-paper-plane me-2"></i>Envoyer le message
-                                    </button>
-                                </div>
-                            </form>
+                            
                             <form method="post" novalidate>
                                 {% csrf_token %}
 
                                 <div class="mb-3">
-                                    <label for="{{ form.name.id_for_label }}" class="form-label">{{ form.name.label }} <span class="text-danger">*</span></label>
+                                    <label for="{{ form.name.id_for_label }}" class="form-label">{{ form.nom_complet.label }} <span class="text-danger">*</span></label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                        {{ form.name|add_class:"form-control" }}
+                                        {{ form.nom_complet|add_class:"form-control" }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="{{ form.email.id_for_label }}" class="form-label">{{ form.email.label }} <span class="text-danger">*</span></label>
+                                    <label for="{{ form.email.id_for_label }}" class="form-label">{{ form.mail.label }} <span class="text-danger">*</span></label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                        {{ form.email|add_class:"form-control" }}
+                                        {{ form.mail|add_class:"form-control" }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="{{ form.phone.id_for_label }}" class="form-label">{{ form.phone.label }}</label>
+                                    <label for="{{ form.phone.id_for_label }}" class="form-label">{{ form.telephone.label }}</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                                        {{ form.phone|add_class:"form-control" }}
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="{{ form.subject.id_for_label }}" class="form-label">{{ form.subject.label }}</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fas fa-tag"></i></span>
-                                        {{ form.subject|add_class:"form-select" }}
+                                        {{ form.telephone|add_class:"form-control" }}
                                     </div>
                                 </div>
 
@@ -216,7 +175,7 @@
                                 </div>
 
                                 <div class="d-grid">
-                                    <button type="submit" class="btn bg-orange text-white btn-lg">
+                                    <button type="submit" class="btn btn-green text-white btn-lg">
                                         <i class="fas fa-paper-plane me-2"></i>Envoyer le message
                                     </button>
                                 </div>
@@ -230,4 +189,5 @@
     </div>
 </div>
 
+{% include 'footer.html' %}
 {% endblock %}

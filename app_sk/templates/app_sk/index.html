@@ -1,100 +1,241 @@
 {% extends 'base.html' %}
-{% block title %}index{% endblock %}
+{% block title %}Accueil - SoinsKenya{% endblock %}
 {% load static %}
 {% block content %}
 <style>
-    body {
-        background-color: rgb(225, 221, 221);
+    :root {
+        --green: #1a5d1a;
+        --green-light: #e8f5e9;
+        --green-dark: #0d3d0d;
+        --white: #FFFFFF;
     }
-    #ind {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 80px;
-        background-image: url("{% static 'img/ban.webp' %}");
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+    }
+    
+    .hero-section {
+        height: 600px;
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'img/ban.webp' %}");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        height: 600px;
-        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-top: 80px;
     }
-    #best {
-        
-        
-        background-color: rgba(13, 22, 13, 0.5);
-    }
-    .agence {
-        margin-top: 20px;
-        margin-bottom: 15px;
-        border: 1px;
+    
+    .hero-content {
+        background-color: rgba(26, 93, 26, 0.6);
+        padding: 2rem;
         border-radius: 10px;
+        max-width: 800px;
+    }
+    
+    .mission-card {
+        background-color: var(--white);
+        color: black;
+        border-radius: 10px;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--green);
+    }
+    
+    .hospital-card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        height: 100%;
+    }
+    
+    .hospital-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .hospital-img {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .testimonial-card {
+        border-left: 4px solid var(--green);
+    }
+    
+    @media (max-width: 768px) {
+        .hero-section {
+            height: 500px;
+        }
+        
+        .hero-content {
+            margin: 0 1rem;
+        }
     }
 </style>
 
-<div class="container-fluid">
+<div class="container-fluid px-0">
     {% include 'nav.html' %}
-    <div id="ind" class="container-fluid text-center  agence back">
-        <div id="best" class="col text-white p-3">
-            <h1>SoinsKenya</h1>
-            <h2>Nous facilitons l'accès aux soins contre le cancer à Nairobi pour les malades congolais.</h2>
-            <div class="">
-                <a href="#" class="btn btn-outline-light btn-lg"><i class="bi bi-telephone"></i> Nous contacter</a>
-                <a href="#" class="btn btn-outline-light btn-lg">Commencer</a>
-            </div>
-        </div>
-    </div>
-        <!-- A PROPOSE DE L'AGENCE -->
-    <div class="container-fluid agence">
-        
-        
-    </div>
-    <div class="mb-2 bg-success text-white agence">
-        <h2 class="text-center"> Notre mission</h2>
-        <div class="row p-2" style="text-align: justify;">
-            <h3 style="font-style: italic;">
-                "Permettre aux malades congolais atteints de cancer d’accéder
-                à des soins spécialisés de qualité à Nairobi, au Kenya."
-            </h3>
-        </div>
-    </div>
-    <div class="gence bg-light agence">
-        <h2 class="text-center">Pourquoi Nairobi?</h2>
-        <h3 class="text-center">Choisissez-nous pour ces 4 raisons :</h3>
-        
-        <!-- Conteneur responsive -->
-        <div class="container mt-4">
-            <div class="row text-center">
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <i class="bi bi-hospital fs-1 mb-2 text-success" style="font-size: 60px;"></i>
-                    <h5>Infrastructures médicales de haut niveau</h5>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <i class="fas fa-user-md fs-1 mb-2" tyle="font-size: 60px;"></i>
-                    <h5>Spécialistes qualifiés et expérimentés</h5>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <i class="fas fa-hand-holding-usd fs-1 mb-2 text-warning" tyle="font-size: 60px;"></i>
-                    <h5>Coût des soins plus abordable</h5>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <i class="bi bi-people fs-1 mb-2" tyle="font-size: 60px;"></i>
-                    <h5>Accessibilité et accompagnement personnalisé</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="d-flex text-whitea">
-            <div class="col-6" style="margin: auto;">
-                <img src="{% static 'img/pourquoi.jpeg' %}" alt="image" class="m-3" style="width: 90%; height: 150px; border-radius: 10px;">
-            </div>
-            <div class="col-6" style="margin: auto;">
-                <img src="{% static 'img/accomp.jpeg' %}" alt="image" class="m-3" style="width: 90%; height: 150px; border-radius: 10px;">
-            </div>
-        </div>
-
-                
-    </div>
     
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="display-4 fw-bold mb-3">Veza Services</h1>
+            <h2 class="mb-4">Nous facilitons l'accès aux soins contre le cancer à Nairobi</h2>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="{% url 'app_sk:contact' %}" class="btn btn-outline-light btn-lg">
+                    <i class="bi bi-telephone me-2"></i>Nous contacter
+                </a>
+                <a href="" class="btn btn-light btn-lg text-success">
+                    Découvrir nos services
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Main Content -->
+    <div class="container py-5">
+        <div class="row g-4">
+            <!-- Left Column -->
+            <div class="col-lg-4">
+                <!-- Mission Card -->
+                <div class="mission-card p-4 mb-4">
+                    <h2 class="text-center mb-3">Notre mission</h2>
+                    <blockquote class="blockquote">
+                        <p class="fst-italic">"Permettre aux malades congolais atteints de cancer d'accéder à des soins spécialisés de qualité à Nairobi, au Kenya."</p>
+                    </blockquote>
+                </div>
+
+                <!-- Why Nairobi -->
+                <div class="bg-white p-4 rounded shadow-sm mb-4">
+                    <h2 class="text-center mb-4">Pourquoi Nairobi ?</h2>
+                    <div class="row g-3">
+                        <div class="col-6 col-md-6 text-center">
+                            <div class="feature-icon">
+                                <i class="bi bi-hospital"></i>
+                            </div>
+                            <h6>Infrastructures médicales modernes</h6>
+                        </div>
+                        <div class="col-6 col-md-6 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h6>Oncologues expérimentés</h6>
+                        </div>
+                        <div class="col-6 col-md-6 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h6>Coûts 30-50% moins chers</h6>
+                        </div>
+                        <div class="col-6 col-md-6 text-center">
+                            <div class="feature-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h6>Accompagnement complet</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Contact -->
+                <div class="bg-light p-3 rounded text-center">
+                    <h5><i class="fas fa-phone-alt text-danger me-2"></i> Urgence médicale</h5>
+                    <p class="mb-1">+243 812 154 555</p>
+                    <p>+243 995 451 555</p>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-lg-8">
+                <!-- Testimonials -->
+                <div class="mb-5">
+                    <h2 class="text-center mb-4">Témoignages de patients</h2>
+                    {% if temoignages %}
+                        <div id="temoignageCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for temoignage in temoignages %}
+                                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                    <div class="card testimonial-card mx-auto" style="max-width: 600px;">
+                                        <div class="card-body p-4">
+                                            <div class="text-center mb-3">
+                                                <img src="" class="rounded-circle" width="80" alt="Patient">
+                                            </div>
+                                            <h5 class="card-title text-center">{{ temoignage.nom }} {{ temoignage.post_nom }}</h5>
+                                            <p class="card-text fst-italic text-center">"{{ temoignage.temoignage }}"</p>
+                                            <div class="text-center text-success">
+                                                {% for i in "12345" %}
+                                                    {% if forloop.counter <= temoignage.note %}
+                                                        <i class="fas fa-star"></i>
+                                                    {% else %}
+                                                        <i class="far fa-star"></i>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#temoignageCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon bg-success rounded-circle"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#temoignageCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon bg-success rounded-circle"></span>
+                            </button>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info text-center">Aucun témoignage disponible pour l'instant</div>
+                    {% endif %}
+                </div>
+
+                <!-- Hospitals Section -->
+                <div class="mb-4">
+                    <h2 class="text-center mb-4">Nos hôpitaux partenaires à Nairobi</h2>
+                    <div class="row g-4">
+                        <!-- Hospital 1 -->
+                        <div class="col-md-6">
+                            <div class="card hospital-card h-100">
+                                <img src="{% static 'img/agakan1.webp' %}" class="card-img-top hospital-img" alt="Aga Khan University Hospital">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aga Khan University Hospital</h5>
+                                    <p class="card-text">Centre d'excellence en oncologie avec équipements de pointe et spécialistes internationaux.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Chimiothérapie</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Radiothérapie</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Chirurgie oncologique</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Hospital 2 -->
+                        <div class="col-md-6">
+                            <div class="card hospital-card h-100">
+                                <img src="{% static 'img/nhospital2.jpg' %}" class="card-img-top hospital-img" alt="Nairobi Hospital">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nairobi Hospital</h5>
+                                    <p class="card-text">Unité d'oncologie complète avec approche multidisciplinaire des traitements contre le cancer.</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Immunothérapie</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Médecine nucléaire</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Soins palliatifs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+{% include 'footer.html' %}
 {% endblock %}
