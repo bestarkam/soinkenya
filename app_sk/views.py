@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.core.mail import send_mail
-from app_sk.forms import ContactForm, ServiceForm, DetailServiceFormSet
+from app_sk.forms import ContactForm, ServiceForm, DetailServiceFormSet, DemandeServiceForm
 from app_sk.models import Service, Temoignage, Contact
 from django.conf import settings
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -43,6 +44,28 @@ def liste_services(request):
         'current_page' : 'service'
     }
     return render(request, 'app_sk/service/liste_services.html', context)
+
+
+def demander_service(request, service_id):
+    service = get_object_or_404(Service, id=service_id)
+
+    if request.method == "POST" :
+        form = DemandeServiceForm(request.POST)
+        if form.is_valid():
+            demande = form.save(commit=False)
+            demande.service = service
+            demande.save()
+            messages.success(request, f"Votre demande a été envoyé avec succès; nous vous repondrons dans moins de 24h.")
+            return redirect('app_sk:service')
+    else :
+        form = DemandeServiceForm()
+
+    context = {
+        'service': service,
+        'form' : form
+    }
+
+    return render(request, 'app_sk/service/demanderservice.html', context)
 
 
 def contact(request):

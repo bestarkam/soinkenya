@@ -163,7 +163,7 @@
                     </div>
                     <hr style="color: black; margin-top: 0px;">
                     <div class="add-border">
-                        <a href="#" class=" btn btn-dark text-center">Demander ce service</a>
+                        <a href="{% url 'app_sk:demander_service' service.id %}" class=" btn btn-dark text-center">Demander ce service</a>
                     </div>
                 </article>
             {% endfor %}

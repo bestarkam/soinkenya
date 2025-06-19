@@ -28,6 +28,8 @@ class DemanderServicer(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name="demandeservices")
     nom = models.CharField(max_length=30, blank=False, null=False)
     post_nom = models.CharField(max_length=30, blank=False, null=False)
+    phone_number = models.CharField(blank=False, null=False)
+    email = models.EmailField(blank=False, null=False)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

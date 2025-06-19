@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Demande de Service | SoinsKenya{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid px-0">
+    {% include 'nav.html' with current_page="service" %}
+    
+    <main class="container py-5" style="margin-top: 70px;">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- En-tête -->
+                <div class="bg-success text-white p-4 rounded-top">
+                    <h2 class="mb-0">
+                        <i class="fas fa-file-alt me-2"></i>Demande de Service
+                    </h2>
+                </div>
+                
+                <!-- Carte principale -->
+                <div class="card rounded-top-0 shadow-sm">
+                    <div class="card-body p-0">
+                        <div class="row g-0">
+                            <!-- Colonne info service -->
+                            <div class="col-md-5 p-4 bg-light">
+                                <div class="border-start border-4 border-success ps-3">
+                                    <h3 class="text-success">Service demandé :</h3>
+                                    <h4 class="mb-4">{{ service.nom }}</h4>
+                                    
+                                    <h3 class="text-success">Description :</h3>
+                                    <p>{{ service.description }}</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Colonne formulaire -->
+                            <div class="col-md-7 p-4">
+                                <form method="post">
+                                    {% csrf_token %}
+                                    
+                                    <!-- Affichage standard du formulaire -->
+                                    <div class="mb-4">
+                                        {{ form.as_p }}
+                                    </div>
+                                    
+                                    <!-- Boutons -->
+                                    <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+                                        <a href="{% url 'app_sk:service' %}" class="btn btn-outline-secondary">
+                                            <i class="fas fa-arrow-left me-1"></i> Retour
+                                        </a>
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fas fa-paper-plane me-1"></i> Envoyer
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% include 'footer.html' %}
+{% endblock %}

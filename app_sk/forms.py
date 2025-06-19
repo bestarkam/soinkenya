@@ -1,5 +1,5 @@
 from django.forms import ModelForm, inlineformset_factory
-from app_sk.models import Contact, Service, DetailService
+from app_sk.models import Contact, Service, DetailService, DemanderServicer
 from django import forms
 
 class ContactForm(ModelForm):
@@ -44,4 +44,28 @@ DetailServiceFormSet = inlineformset_factory(
     extra=1,  
     can_delete=True  
 )
+
+class DemandeServiceForm(ModelForm):
+    class Meta:
+        model = DemanderServicer
+        fields = ['nom', 'post_nom', 'phone_number', 'email']
+
+        widgets = {
+            'nom': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Votre nom'
+            }),
+            'post_nom': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Votre post_nom'
+            }),
+            'phone_number': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Votre numéro de téléphone'
+            }),
+            'email': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Votre adresse mail'
+            })
+        }
 
