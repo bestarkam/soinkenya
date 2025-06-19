@@ -52,10 +52,25 @@ def demander_service(request, service_id):
     if request.method == "POST" :
         form = DemandeServiceForm(request.POST)
         if form.is_valid():
+            #enregistrer dans la base de donnees
             demande = form.save(commit=False)
             demande.service = service
             demande.save()
+            #notifier l'utilisateur
             messages.success(request, f"Votre demande a été envoyé avec succès; nous vous repondrons dans moins de 24h.")
+
+            #envoyer une notification par mail pour admin
+            cd = form.cleaned_data
+            subject = f"Nouvelle demande de service : {service.nom}"
+            message = (
+                f"Nom : {cd.get('nom')}\n"
+                f"Post-nom : {cd.get('post_nom')}\n"
+                f"Email : {cd.get('email')}\n"
+                f"Téléphone : {cd.get('phone_number')}\n"
+                f"Service demandé : {service.nom}"
+            )
+            send_mail(subject, message, cd.get('email'), [settings.CONTACT_EMAIL])
+
             return redirect('app_sk:service')
     else :
         form = DemandeServiceForm()
