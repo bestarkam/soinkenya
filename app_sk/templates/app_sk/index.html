@@ -16,9 +16,9 @@
     }
     
     .hero-section {
-        height: 600px;
+        height: 500px;
         background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'img/ban.webp' %}");
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         display: flex;
@@ -157,6 +157,7 @@
                 <!-- Testimonials -->
                 <div class="mb-5">
                     <h2 class="text-center mb-4">Témoignages de patients</h2>
+                    <h2 class="btn btn-success" style="text-align: center; padding: auto; display: none;">Laisser un temoignage</h2>
                     {% if temoignages %}
                         <div id="temoignageCarousel" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -164,9 +165,6 @@
                                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                                     <div class="card testimonial-card mx-auto" style="max-width: 600px;">
                                         <div class="card-body p-4">
-                                            <div class="text-center mb-3">
-                                                <img src="" class="rounded-circle" width="80" alt="Patient">
-                                            </div>
                                             <h5 class="card-title text-center">{{ temoignage.nom }} {{ temoignage.post_nom }}</h5>
                                             <p class="card-text fst-italic text-center">"{{ temoignage.temoignage }}"</p>
                                             <div class="text-center text-success">
@@ -178,10 +176,12 @@
                                                     {% endif %}
                                                 {% endfor %}
                                             </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
                                 {% endfor %}
+                                
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#temoignageCarousel" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon bg-success rounded-circle"></span>
@@ -190,10 +190,13 @@
                                 <span class="carousel-control-next-icon bg-success rounded-circle"></span>
                             </button>
                         </div>
+                        
                     {% else %}
                         <div class="alert alert-info text-center">Aucun témoignage disponible pour l'instant</div>
                     {% endif %}
+                    
                 </div>
+                
 
                 <!-- Hospitals Section -->
                 <div class="mb-4">
@@ -218,11 +221,12 @@
                         <!-- Hospital 2 -->
                         <div class="col-md-6">
                             <div class="card hospital-card h-100">
-                                <img src="{% static 'img/nhospital2.jpg' %}" class="card-img-top hospital-img" alt="Nairobi Hospital">
+                                <img src="{% static 'img/kenyattaUn.jpeg' %}" class="card-img-top hospital-img" alt="Nairobi Hospital">
                                 <div class="card-body">
-                                    <h5 class="card-title">Nairobi Hospital</h5>
+                                    <h5 class="card-title">Kenyatta University Teaching, Referral and Research Hospital</h5>
                                     <p class="card-text">Unité d'oncologie complète avec approche multidisciplinaire des traitements contre le cancer.</p>
                                     <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Radiothérapie</li>
                                         <li><i class="fas fa-check text-success me-2"></i>Immunothérapie</li>
                                         <li><i class="fas fa-check text-success me-2"></i>Médecine nucléaire</li>
                                         <li><i class="fas fa-check text-success me-2"></i>Soins palliatifs</li>

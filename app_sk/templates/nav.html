@@ -1,7 +1,7 @@
 
 
 
-<style>
+<!-- <style>
     #nav {
         background-color: rgba(13, 22, 13, 0.7);
         padding-top: 0px;
@@ -14,12 +14,13 @@
     }
     a.active {
         border-bottom: 1px solid white;
+        
     }
 </style>
 <nav id="nav" class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-        <!-- Nom ou logo du site -->
-        <a class="navbar-brand fw-bold text-white" href="#" style="border-right: 10px solid white;">
+        
+        <a class="navbar-brand fw-bold text-white" href="#">
             <h1>Veza</h1>
         </a>
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -33,27 +34,26 @@
             </div>
 
 
-        <!-- Contenu -->
-            <!-- <div class="collapse navbar-collapse p-2 rounded" id="kam1"> -->
+    
             <div class="offcanvas-body">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link text-white {% if current_page == 'index' %}active{% endif %}" 
-                        href="{% url 'app_sk:index' %}"><h3>Home</h3></a>
+                        href="{% url 'app_sk:index' %}"><p class="lead" style="margin: 10px;">Home</p></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white {% if current_page == 'service' %}active{% endif %}" 
-                        href="{% url 'app_sk:service' %}"><h3>Services</h3></a>
+                        href="{% url 'app_sk:service' %}"><p class="lead" style="margin: 10px;">Services</p></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white {% if current_page == 'contact' %}active{% endif %}" 
-                        href="{% url 'app_sk:contact' %}"><h3>Contact</h3></a>
+                        href="{% url 'app_sk:contact' %}"><p class="lead" style="margin: 10px;">Contact</p></a>
                     </li>
                     
                 </ul>
             </div>    
     </div>
-</nav>
+</nav> -->
 
 {% if messages %}
     <div class="" style="margin-top: 90px; margin-bottom: 10px; display: none;">
@@ -65,3 +65,120 @@
     </div>
 {% endif %}
 
+
+
+
+<style>
+    #nav {
+        background-color: black;
+       
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+       
+    }
+    
+    /* #nav.scrolled {
+        background-color: rgba(26, 93, 26, 1); 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    } */
+    
+    #offcanvasNavbar {
+        width: 280px;
+        background-color: #1a5d1a;
+    }
+    
+    .navbar-brand h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    
+    .nav-link {
+        color: white !important;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        margin: 0 0.25rem;
+        border-radius: 4px;
+       
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-bottom: 2px solid white;
+    }
+    
+    /* .navbar-toggler {
+        border: none;
+        padding: 0.5rem;
+    } */
+    
+    .offcanvas-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+</style>
+
+<nav id="nav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <!-- Nom ou logo du site -->
+        <a class="navbar-brand text-white" href="{% url 'app_sk:index' %}">
+            <h1>VezaServices</h1>
+        </a>
+        
+        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+            <span class="navbar-toggler-icon text-white"></span>
+        </button>
+        
+        <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-white">Menu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+            </div>
+            
+            <div class="offcanvas-body">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_page == 'index' %}active{% endif %}" 
+                           href="{% url 'app_sk:index' %}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_page == 'service' %}active{% endif %}" 
+                           href="{% url 'app_sk:service' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_page == 'contact' %}active{% endif %}" 
+                           href="{% url 'app_sk:contact' %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{% if messages %}
+<div class="container mt-5 pt-4">
+    {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<script>
+// Effet au scroll
+window.addEventListener('scroll', function() {
+    const nav = document.getElementById('nav');
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+</script>
