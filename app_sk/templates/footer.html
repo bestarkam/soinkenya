@@ -1,6 +1,6 @@
 <style>
     .text-green {
-        color: #1a5d1a;
+        color: #248f24;
     }
     
     .btn-green {
@@ -32,7 +32,7 @@
             <div class="col-md-4 mb-4">
                 <h5 class="text-green mb-3"><i class="fas fa-heartbeat me-2"></i> À propos de nous</h5>
                 <p>Nous facilitons l'accès aux soins médicaux au Kenya pour les patients congolais atteints de cancer, en offrant un accompagnement complet tout au long du processus de traitement.</p>
-                <div class="social-icons">
+                <div class="social-icons" style="display: none;">
                     <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
@@ -44,11 +44,11 @@
             <div class="col-md-2 mb-4">
                 <h5 class="text-green mb-3">Liens rapides</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="/" class="text-white text-decoration-none">Accueil</a></li>
-                    <li class="mb-2"><a href="/services" class="text-white text-decoration-none">Nos services</a></li>
-                    <li class="mb-2"><a href="/hôpitaux" class="text-white text-decoration-none">Hôpitaux partenaires</a></li>
-                    <li class="mb-2"><a href="/témoignages" class="text-white text-decoration-none">Témoignages</a></li>
-                    <li class="mb-2"><a href="/contact" class="text-white text-decoration-none">Contact</a></li>
+                    <li class="mb-2"><a href="{% url 'app_sk:index' %}" class="text-white text-decoration-none">Accueil</a></li>
+                    <li class="mb-2"><a href="{% url 'app_sk:service' %}" class="text-white text-decoration-none">Nos services</a></li>
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none">Hôpitaux partenaires</a></li>
+                    <li class="mb-2"><a href="#" class="text-white text-decoration-none">Témoignages</a></li>
+                    <li class="mb-2"><a href="{% url 'app_sk:contact' %}" class="text-white text-decoration-none">Contact</a></li>
                 </ul>
             </div>
 
@@ -57,14 +57,15 @@
                 <h5 class="text-green mb-3">Nous contacter</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2"><i class="fas fa-map-marker-alt text-green me-2"></i> Goma, RDC</li>
-                    <li class="mb-2"><i class="fas fa-phone-alt text-green me-2"></i> +243 995 451 555</li>
-                    <li class="mb-2"><i class="fas fa-envelope text-green me-2"></i> contact@soinskenya.cd</li>
-                    <li class="mb-2"><i class="fas fa-clock text-green me-2"></i> Lun-Ven: 8h-17h</li>
+                    <li class="mb-2"><i class="fas fa-phone-alt text-green me-2"></i> +243 998 947 446 </li>
+                    <li class="mb-2"><i class="fas fa-phone-alt text-green me-2"></i> +254 728 852 746 </li>
+                    <li class="mb-2"><i class="fas fa-envelope text-green me-2"></i> contact-veza@gmail.com</li>
+                    <li class="mb-2" style="display: none;"><i class="fas fa-clock text-green me-2"></i> Lun-Ven: 8h-17h</li>
                 </ul>
             </div>
 
             <!-- Colonne Newsletter -->
-            <div class="col-md-3 mb-4">
+            <div class="col-md-3 mb-4" style="display: none;">
                 <h5 class="text-green mb-3">Newsletter</h5>
                 <p>Abonnez-vous pour recevoir nos dernières actualités et informations sur les traitements.</p>
                 <form class="mt-3">
