@@ -25,6 +25,10 @@
         padding: 5rem 0;
         margin-top: 70px;
         margin-bottom: 4rem;
+        border-bottom-left-radius: 50px;
+
+        border-bottom-right-radius: 50px;
+
     }
     
     .services-grid {
@@ -143,7 +147,7 @@
                         </h3>
                     </header>
                     <div class="service-body">
-                        <ul class="service-features">
+                        <ul class="service-features list-unstyled">
                             {% for detail in service.services.all %}
                                 <li>
                                     <span class="feature-icon">
