@@ -18,7 +18,7 @@
     .hero-section {
         height: 500px;
         background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'img/ban.webp' %}");
-        background-size: contain;
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         display: flex;
@@ -93,7 +93,7 @@
                 <a href="{% url 'app_sk:contact' %}" class="btn btn-outline-light btn-lg">
                     <i class="bi bi-telephone me-2"></i>Nous contacter
                 </a>
-                <a href="" class="btn btn-light btn-lg text-success">
+                <a href="{% url 'app_sk:service' %}" class="btn btn-light btn-lg text-success">
                     Découvrir nos services
                 </a>
             </div>
