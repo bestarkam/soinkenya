@@ -15,5 +15,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 
 # Commande de démarrage par défaut
-CMD ["gunicorn", "ton_projet.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "projet_sk.wsgi:application", "--bind", "0.0.0.0:8000"]
 
