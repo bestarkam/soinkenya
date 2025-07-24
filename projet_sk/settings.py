@@ -27,7 +27,11 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['soinkenya.onrender.com']
+ALLOWED_HOSTS = [
+    'vezacancer.com',
+    'www.vezacancer.com',
+    'soinkenya.onrender.com'
+    ]
 
 
 # Application definition
