@@ -29,14 +29,14 @@ MEDIA_ROOT = BASE_DIR / 'media'  # Dossier où les fichiers seront stockés
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = [
-#     'vezacancer.com',
-#     'www.vezacancer.com',
-#     'soinkenya.onrender.com'
-#     ]
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'vezacancer.com',
+    'www.vezacancer.com',
+    'soinkenya.onrender.com'
+    ]
+
 
 # Application definition
 
