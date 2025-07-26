@@ -7,7 +7,9 @@ class Service(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     nom = models.CharField(max_length=50, blank=False, null=False)
     description = models.TextField(max_length=200, blank=False, null=False)
+    phrasePhare = models.CharField(max_length=60, blank=True, null=True)
     disponible = models.BooleanField(default=False)
+    image = models.ImageField(upload_to="services/", null=True, blank=True)
     prix1 = models.IntegerField(blank=True, null=True)
     prix2 = models.IntegerField(blank=True, null=True)
 
@@ -21,7 +23,7 @@ class DetailService(models.Model):
     
 
     def __str__(self):
-        return f"{self.service.nom}/{self.detail}"
+        return f"{self.detail}"
 
 class DemanderServicer(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
@@ -40,6 +42,7 @@ class Temoignage(models.Model):
     nom = models.CharField(max_length=30, blank=False, null=False)
     post_nom = models.CharField(max_length=30, blank=False, null=False)
     temoignage = models.TextField(blank=False, null=False)
+    pubic = models.BooleanField(default=False)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -58,3 +61,7 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.nom_complet}"
+
+
+
+

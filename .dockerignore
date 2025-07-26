@@ -1,9 +1,0 @@
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-env/
-venv/
-sk_env/
-.vscode/
-*.db

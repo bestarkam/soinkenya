@@ -10,7 +10,7 @@ class ContactForm(ModelForm):
 class ServiceForm(ModelForm):
     class Meta:
         model = Service
-        fields = ['nom', 'description']
+        fields = ['nom', 'description', 'phrasePhare']
         widgets = {
             'nom': forms.TextInput(attrs={
                 'class': 'form-control',

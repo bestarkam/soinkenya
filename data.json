@@ -1,0 +1,464 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2025-07-25T14:23:26.700Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "object_repr": "Rdioherapie",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2025-07-26T08:02:11.129Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "object_repr": "Chimiothérapie",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2025-07-26T08:02:26.529Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "object_repr": "Chimiothérapie",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Disponible\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2025-07-26T08:05:19.017Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "object_repr": "Chimiothérapie",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Disponible\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2025-07-26T08:10:18.736Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "object_repr": "Chimiothérapie",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2025-07-26T08:13:14.719Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "object_repr": "Rdioherapie",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2025-07-26T09:33:19.081Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "object_repr": "Chimiothérapie",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2025-07-26T09:35:12.722Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "object_repr": "Rdioherapie",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2025-07-26T09:35:26.102Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "object_repr": "Rdioherapie",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2025-07-26T09:54:33.682Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "object_repr": "Rdioherapie",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"PhrasePhare\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2025-07-26T09:54:39.405Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "object_repr": "Rdioherapie",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2025-07-26T09:55:24.908Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "object_repr": "Chimiothérapie",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"PhrasePhare\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2025-07-26T09:55:32.314Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "object_repr": "Chimiothérapie",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2025-07-26T10:02:09.612Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "object_repr": "Rdioherapie",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"PhrasePhare\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2025-07-26T10:33:11.228Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "593e023b-8b15-45bf-9d08-15e91f256e9b",
+        "object_repr": "Chimiothérapie/Accès rapide aux traitements modernes pour combattre efficacement le cancer.",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2025-07-26T10:33:25.134Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "f1bcf6c9-479d-4d80-9cbb-eb00eb4d647e",
+        "object_repr": "Chimiothérapie/Suivi médical personnalisé par une équipe spécialisée en oncologie.",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2025-07-26T10:33:37.310Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "35ad48b0-cfff-4835-9161-1ee02ba7199f",
+        "object_repr": "Chimiothérapie/Traitement administré dans des structures certifiées et sécurisées.",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2025-07-26T10:33:48.612Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "c176b9b8-390c-4b75-a31e-5b5522a6f1c1",
+        "object_repr": "Chimiothérapie/Accompagnement complet pour réduire le stress et faciliter vos démarches.",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2025-07-26T10:34:23.598Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "431d8ec3-19b6-44da-a1eb-6ac80fe010b3",
+        "object_repr": "Rdioherapie/Technologie avancée pour cibler précisément les cellules cancéreuses",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2025-07-26T10:34:33.260Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "7b5f43e0-abff-47c8-a30c-d8382e374d7f",
+        "object_repr": "Rdioherapie/Équipe expérimentée garantissant un traitement sûr et efficace.",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2025-07-26T10:34:45.652Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "05e664c1-3c3c-4cd9-8fc6-9ac5600aa51d",
+        "object_repr": "Rdioherapie/Accès facilité aux meilleurs centres de radiothérapie de Nairobi.",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2025-07-26T10:34:56.216Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "e427d07a-2166-45cd-8d23-b6dc1df7906d",
+        "object_repr": "Rdioherapie/Prise en charge humaine et continue pour vous soutenir à chaque étape.",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$e8RhDlzgza7lTEyixOOxap$uifQlewMOpfx/qaFxygb7eMf48Lm2Ft87TzUhc5H2rg=",
+        "last_login": "2025-07-25T14:22:14.903Z",
+        "is_superuser": true,
+        "username": "parisien",
+        "first_name": "",
+        "last_name": "",
+        "email": "bestarkam1234@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-07-25T14:21:56.589Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "rilaeaz6nkrbif7ye1jinzxcz4tdt5o7",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGln-fyjpOYO1a69xADlSnFSIu0OkFNC-mXkvlmBbW9oGLWkq7MwkO_1uCPlBfQflDv028zz3dZmQ7wo_6ODXudDzcrh_Bw1G-9bOmSyyhKyrhqqssJKkK2Q8FoeIJopatfBkUVEN1qE2IfoYUBlpfWTvD-0DN6k:1ufJJO:zIZHY9UyxKqpVWy2W2AgGVuATgufFwMHHQMo1ENaaRo",
+        "expire_date": "2025-08-08T14:22:14.911Z"
+    }
+},
+{
+    "model": "app_sk.service",
+    "pk": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+    "fields": {
+        "nom": "Rdioherapie",
+        "description": "suivez la radiotherapie a un prix qui vous va a merveille",
+        "phrasePhare": "Obtenez un excellent traitement avec nous nous nous nous",
+        "disponible": true,
+        "image": "services/cancer-sein-scanner-_centrage-radiotherapie.avif",
+        "prix1": 234,
+        "prix2": 50
+    }
+},
+{
+    "model": "app_sk.service",
+    "pk": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+    "fields": {
+        "nom": "Chimiothérapie",
+        "description": "Faites vos seances des chimiotherapie avec nous et nous vous accompagnerons durant tous le voyage.",
+        "phrasePhare": "une chimiotherapie vers la guerison",
+        "disponible": true,
+        "image": "services/CHIMIO_MLgtuyn.jpg",
+        "prix1": 200,
+        "prix2": 100
+    }
+},
+{
+    "model": "app_sk.detailservice",
+    "pk": "05e664c1-3c3c-4cd9-8fc6-9ac5600aa51d",
+    "fields": {
+        "service": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "detail": "Accès facilité aux meilleurs centres de radiothérapie de Nairobi."
+    }
+},
+{
+    "model": "app_sk.detailservice",
+    "pk": "35ad48b0-cfff-4835-9161-1ee02ba7199f",
+    "fields": {
+        "service": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "detail": "Traitement administré dans des structures certifiées et sécurisées."
+    }
+},
+{
+    "model": "app_sk.detailservice",
+    "pk": "431d8ec3-19b6-44da-a1eb-6ac80fe010b3",
+    "fields": {
+        "service": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "detail": "Technologie avancée pour cibler précisément les cellules cancéreuses"
+    }
+},
+{
+    "model": "app_sk.detailservice",
+    "pk": "593e023b-8b15-45bf-9d08-15e91f256e9b",
+    "fields": {
+        "service": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "detail": "Accès rapide aux traitements modernes pour combattre efficacement le cancer."
+    }
+},
+{
+    "model": "app_sk.detailservice",
+    "pk": "7b5f43e0-abff-47c8-a30c-d8382e374d7f",
+    "fields": {
+        "service": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "detail": "Équipe expérimentée garantissant un traitement sûr et efficace."
+    }
+},
+{
+    "model": "app_sk.detailservice",
+    "pk": "c176b9b8-390c-4b75-a31e-5b5522a6f1c1",
+    "fields": {
+        "service": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "detail": "Accompagnement complet pour réduire le stress et faciliter vos démarches."
+    }
+},
+{
+    "model": "app_sk.detailservice",
+    "pk": "e427d07a-2166-45cd-8d23-b6dc1df7906d",
+    "fields": {
+        "service": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "detail": "Prise en charge humaine et continue pour vous soutenir à chaque étape."
+    }
+},
+{
+    "model": "app_sk.detailservice",
+    "pk": "f1bcf6c9-479d-4d80-9cbb-eb00eb4d647e",
+    "fields": {
+        "service": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "detail": "Suivi médical personnalisé par une équipe spécialisée en oncologie."
+    }
+},
+{
+    "model": "app_sk.demanderservicer",
+    "pk": "54d9047d-63db-45ba-81db-5d9aef687776",
+    "fields": {
+        "service": "4dea1c40-0403-47d7-9f97-4abc35b5c023",
+        "nom": "fgrt",
+        "post_nom": "fgtr",
+        "phone_number": "4567",
+        "email": "bestarkam1234@gmail.com",
+        "date": "2025-07-26T11:28:53.622Z"
+    }
+},
+{
+    "model": "app_sk.demanderservicer",
+    "pk": "5a3a716d-74c0-421f-ba46-47e058b437bf",
+    "fields": {
+        "service": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "nom": "best",
+        "post_nom": "Kanbali",
+        "phone_number": "+243978230764",
+        "email": "bestarkam1234@gmail.com",
+        "date": "2025-07-26T13:22:16.827Z"
+    }
+},
+{
+    "model": "app_sk.demanderservicer",
+    "pk": "788ca3bc-7773-4431-a2fe-22dcb2d5467c",
+    "fields": {
+        "service": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "nom": "Mito",
+        "post_nom": "Patient",
+        "phone_number": "+243978230764",
+        "email": "bestarkam1234@gmail.com",
+        "date": "2025-07-26T11:13:59.412Z"
+    }
+},
+{
+    "model": "app_sk.demanderservicer",
+    "pk": "f82344c6-08c7-480d-a5bf-863adec34c4f",
+    "fields": {
+        "service": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "nom": "JOH",
+        "post_nom": "Kanbali",
+        "phone_number": "+243978230764",
+        "email": "bestarkam1234@gmail.com",
+        "date": "2025-07-26T13:28:21.148Z"
+    }
+},
+{
+    "model": "app_sk.demanderservicer",
+    "pk": "f9823710-6f29-4f56-ac81-5e12020101de",
+    "fields": {
+        "service": "88552fcf-c5ba-48ce-9620-1cb6d08e1c91",
+        "nom": "Mito",
+        "post_nom": "Patient",
+        "phone_number": "+243978230764",
+        "email": "bestarkam1234@gmail.com",
+        "date": "2025-07-26T11:12:22.948Z"
+    }
+}
+]

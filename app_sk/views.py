@@ -9,7 +9,11 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     temoignages = Temoignage.objects.all()
+    leServices = Service.objects.all().order_by('disponible')
+    
+    
     context={
+        'leServices' : leServices,
         'temoignages' : temoignages,
         'current_page' : 'index'
     }
@@ -37,17 +41,17 @@ def ajouter_service(request):
     })
 
 
-def liste_services(request):
-    services = Service.objects.prefetch_related('services')
+def afficherApropos(request):
     context = {
-        'services': services,
-        'current_page' : 'service'
+        'propos' : 'propos'
     }
-    return render(request, 'app_sk/service/liste_services.html', context)
+    
+    return render(request, 'app_sk/principal/propos.html', context)
 
 
 def demander_service(request, service_id):
     service = get_object_or_404(Service, id=service_id)
+    details = service.services.all()
 
     if request.method == "POST" :
         form = DemandeServiceForm(request.POST)
@@ -56,8 +60,6 @@ def demander_service(request, service_id):
             demande = form.save(commit=False)
             demande.service = service
             demande.save()
-            #notifier l'utilisateur
-            messages.success(request, f"Votre demande a été envoyé avec succès; nous vous repondrons dans moins de 24h.")
 
             #envoyer une notification par mail pour admin
             cd = form.cleaned_data
@@ -71,12 +73,13 @@ def demander_service(request, service_id):
             )
             send_mail(subject, message, cd.get('email'), [settings.CONTACT_EMAIL])
 
-            return redirect('app_sk:service')
+            return redirect('app_sk:message_success')
     else :
         form = DemandeServiceForm()
 
     context = {
         'service': service,
+        'details' : details,
         'form' : form
     }
 

@@ -16,17 +16,18 @@
     }
     
     .hero-section {
-        height: 500px;
-        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'img/ban.webp' %}");
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{% static 'img/cancer1.jpg' %}");
         background-size: cover;
         background-position: center;
+        width: 100%;
+        height: 500px;
         background-repeat: no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         color: white;
-        margin-top: 80px;
+        margin-top: 65px;
     }
     
     .hero-content {
@@ -79,26 +80,216 @@
             margin: 0 1rem;
         }
     }
+    .hero-img {
+        height: 500px;
+        object-fit: contain; /* ou contain selon ton besoin */
+        object-position: center;
+    }
+    /* carou */
+    .blackBack {
+        background-color: black;
+    }
+    .f-Back-img {
+        background-image: url("{% static 'img/cancer1.jpg' %}");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 300px;
+        background-color: black;
+        position: relative;
+        height: 100%;
+        min-height: 300px;
+    }
+    .right-bg {
+        background-image: url("{% static 'img/cancer2.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: white;
+        min-height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: 0px;
+    }
+    .bg-mobile {
+        background-image: url("{% static 'img/cancer1.jpg' %}");
+        background-size: contain;
+        background-position: center;
+        position: relative;
+        color: white;
+        width: 100%;
+        min-height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .f-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .f-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+    }
+
+    .round {
+        border-top-left-radius: 300px;
+    }
+    .img-service {
+        height: 100px;
+        width: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+        
+    }
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+    .navigation {
+        position: fixed;      /* reste fixe même au scroll */
+        top: 70%;             /* centré verticalement */
+        right: 5px;          /* collé à droite */
+        transform: translateY(-50%); /* ajustement vertical */
+        z-index: 9999;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+    .btn-glass-green {
+        background-color: rgba(25, 135, 84, 0.6); /* Vert Bootstrap avec transparence */
+        color: white;
+        border: 1px solid rgba(25, 135, 84, 0.6); /* Bordure légèrement visible */
+        backdrop-filter: blur(4px); /* Effet de flou derrière (optionnel) */
+    }
+
+    
+    
+
+    
 </style>
+
 
 <div class="container-fluid px-0">
     {% include 'nav.html' %}
-    
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1 class="display-4 fw-bold mb-3">Veza Services</h1>
-            <h2 class="mb-4">Nous facilitons l'accès aux soins contre le cancer à Nairobi</h2>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="{% url 'app_sk:contact' %}" class="btn btn-outline-light btn-lg">
-                    <i class="bi bi-telephone me-2"></i>Nous contacter
-                </a>
-                <a href="{% url 'app_sk:service' %}" class="btn btn-light btn-lg text-success">
-                    Découvrir nos services
-                </a>
+
+    <div class="container-fluid d-none d-md-block" style="margin-top: 62px;">
+        <div class="row blackBack">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+               <div class="text-white text-center">
+                    <h2>Vezacancer services</h2>
+                    <p>Nous facilitons l'accès aux soins contre le cancer à Nairobi</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="{% url 'app_sk:contact' %}" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-telephone me-2"></i>Nous contacter
+                        </a>
+                        <a href="#" class="btn btn-light btn-lg text-success d-none">
+                            Nos services
+                        </a>
+                    </div>
+               </div>
+            </div>
+            <div class="col-md-8 right-bg round" style="margin-left: 0px;">
+               <div class="f-overlay">
+                    <div class="f-content">
+                        <h2>Guérissez du cancer</h2>
+                        <p>Nous facilitons l'accès aux soins contre le cancer à Nairobi</p>
+                    </div>
+               </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="container-fluid d-md-none hide" style="margin-top: 65px;">
+        <div class="row">
+            <div class="col-12">
+                <div class="bg-mobile">
+                    <div class="f-overlay">
+                        <div class="f-content" style="margin-top: 15px;">
+                            <h2 >Guérissez du cancer avec Vezacancer</h2>
+                            <p class="text-bold" style="margin-top: 15px;">Nous facilitons l'accès aux soins contre le cancer à Nairobi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="service" class="container mt-4">
+        <h1 class="text-center">Nos services</h1>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2 mt-4 align-items-stretch d-flex justify-content-center align-items-center" id="services-list">
+            {% for service in leServices %}
+                {% if service %}
+                <div class="col d-flex">
+                    <a href="{% url 'app_sk:demander_service' service.id %}" class="card border-0 h-100 card-hover text-decoration-none flex-fill">
+                        {% if service.image %}
+                            <img src="{{ service.image.url }}" class="card-img-top img-service  img-fluid" style="padding:0; margin:0; display:block; width:100%;" alt="{{ service.nom }}">
+                        {% else %}
+                            <img src="{% static 'img/accomp.jpeg' %}" class="card-img-top img-service  img-fluid" style="padding:0; margin:0; display:block; width:100%;" alt="Service">
+                        {% endif %}
+                        <div class="card-body blackBack text-white">
+                            <h6 class="card-title">{{ service.nom }}</h6>
+                            {% if service.phrasePhare %}
+                                <p class="card-text small"><i>{{ service.phrasePhare }}</i></p>
+                            {% endif %}
+                        </div>
+                    </a>
+                </div>
+                {% else %}
+                    <h2 class="text-center">0 service pour l'instant</h2>
+                {% endif %}
+                
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="d-md-none navigation">
+        <a href="#service" class="btn rounded-circle btn-glass-green d-flex flex-column align-items-center m-2 p-2">
+            <i class="bi bi-gear-fill" style="font-size: 10px;"></i>
+            <span style="font-size: 10px;">Service</span>
+        </a>
+
+        <a href="#mission" class="btn rounded-circle btn-glass-green d-flex flex-column align-items-center m-2 p-2">
+            <i class="bi bi-bullseye" style="font-size: 10px;"></i>
+            <span style="font-size: 10px;">Mission</span>
+        </a>
+
+        <a href="#pourquoiNous" class="btn rounded-circle btn-glass-green d-flex flex-column align-items-center m-2 p-2">
+            <i class="bi bi-question-circle" style="font-size: 10px;"></i>
+            <span style="font-size: 10px;">Pourquoi nous ?</span>
+        </a>
+
+        <a href="#temoignage" class="btn rounded-circle btn-glass-green d-flex flex-column align-items-center m-2 p-2">
+            <i class="bi bi-chat-dots-fill" style="font-size: 10px;"></i>
+            <span style="font-size: 10px;">Témoignage</span>
+        </a>
+
+        <a href="#urgence" class="btn rounded-circle btn-glass-green d-flex flex-column align-items-center m-2 p-2">
+            <i class="bi bi-exclamation-triangle-fill" style="font-size: 10px;"></i>
+            <span style="font-size: 10px;">Urgence</span>
+        </a>
+
+        <a href="#partenaire" class="btn rounded-circle btn-glass-green d-flex flex-column align-items-center m-2 p-2">
+            <i class="bi bi-people-fill" style="font-size: 10px;"></i>
+            <span style="font-size: 10px;">Partenaires</span>
+        </a>
+    </div>
+
+
 
     <!-- Main Content -->
     <div class="container py-5">
@@ -106,15 +297,18 @@
             <!-- Left Column -->
             <div class="col-lg-4">
                 <!-- Mission Card -->
-                <div class="mission-card p-4 mb-4">
+                <div id="mission" class="mission-card p-4 mb-4">
                     <h2 class="text-center mb-3">Notre mission</h2>
                     <blockquote class="blockquote">
-                        <p class="fst-italic">"Permettre aux malades congolais atteints de cancer d'accéder à des soins spécialisés de qualité à Nairobi, au Kenya."</p>
+                        <p class="fst-italic text-center">"Offrir aux patients un accès simplifié aux traitements essentiels
+                             comme la chimiothérapie et la radiothérapie,
+                             tout en garantissant un accompagnement humain et professionnel à 
+                             chaque étape de leur parcours de soins."</p>
                     </blockquote>
                 </div>
 
                 <!-- Why Nairobi -->
-                <div class="bg-white p-4 rounded shadow-sm mb-4">
+                <div id="pourquoiNous" class="bg-white p-4 rounded shadow-sm mb-4">
                     <h2 class="text-center mb-4">Pourquoi Nairobi ?</h2>
                     <div class="row g-3">
                         <div class="col-6 col-md-6 text-center">
@@ -145,17 +339,28 @@
                 </div>
 
                 <!-- Emergency Contact -->
-                <div class="bg-light p-3 rounded text-center">
-                    <h5><i class="fas fa-phone-alt text-danger me-2"></i> Urgence médicale</h5>
-                    <p class="mb-1">+243 812 154 555</p>
-                    <p>+243 995 451 555</p>
+                <div id="urgence" class=" p-4 rounded shadow-sm text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-phone-alt fa-2x"></i>
+                    </div>
+                    <h4 class="fw-bold">🚨 Urgence Médicale</h4>
+                    <p class="mb-1 fs-5 fw-semibold">
+                        <a href="tel:+243812154555" class="">
+                            +243 812 154 555
+                        </a>
+                    </p>
+                    <p class="fs-5 fw-semibold">
+                        <a href="tel:+243995451555" class="">
+                            +243 995 451 555
+                        </a>
+                    </p>
                 </div>
             </div>
 
             <!-- Right Column -->
             <div class="col-lg-8">
                 <!-- Testimonials -->
-                <div class="mb-5">
+                <div id="temoignage" class="mb-5">
                     <h2 class="text-center mb-4">Témoignages de patients</h2>
                     <h2 class="btn btn-success" style="text-align: center; padding: auto; display: none;">Laisser un temoignage</h2>
                     {% if temoignages %}
@@ -199,7 +404,7 @@
                 
 
                 <!-- Hospitals Section -->
-                <div class="mb-4">
+                <div id="partenaire" class="mb-4">
                     <h2 class="text-center mb-4">Nos hôpitaux partenaires à Nairobi</h2>
                     <div class="row g-4">
                         <!-- Hospital 1 -->

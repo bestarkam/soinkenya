@@ -17,6 +17,10 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+#TOCKAGE DES PHOTOS
+MEDIA_URL = '/media/'  # URL pour accéder aux fichiers
+MEDIA_ROOT = BASE_DIR / 'media'  # Dossier où les fichiers seront stockés
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -25,14 +29,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    'vezacancer.com',
-    'www.vezacancer.com',
-    'soinkenya.onrender.com'
-    ]
-
+# ALLOWED_HOSTS = [
+#     'vezacancer.com',
+#     'www.vezacancer.com',
+#     'soinkenya.onrender.com'
+#     ]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -83,7 +87,7 @@ WSGI_APPLICATION = "projet_sk.wsgi.application"
 # DATABASES = {
 #     "default": {
 #         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "data" / "db.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
 
@@ -153,4 +157,8 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 EMAIL_USE_TLS = True
 
-CONTACT_EMAIL = 'bestarkam1234@gmail.com'
+CONTACT_EMAIL = ['bestarkam1234@gmail.com', 'venancewabulasa@gmail.com']
+
+
+
+

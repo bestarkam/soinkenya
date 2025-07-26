@@ -3,58 +3,97 @@
 {% load static %}
 
 {% block content %}
+<style>
+    .blackBack {
+        background-color: black;
+    }
+    .typewriter {
+        display: inline-block; /* important pour respecter les colonnes Bootstrap */
+        overflow: hidden;
+        border-right: 2px solid #000;
+        
+        animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+        font-family: monospace;
+        max-width: 100%;
+    }
+
+    @keyframes typing {
+        from {
+            clip-path: inset(0 100% 0 0);
+        }
+        to {
+            clip-path: inset(0 0 0 0);
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+    .hide {
+        display: none;
+    }
+    .detail-style {
+        border-radius: 25px;
+        background-color: black;
+        color: white;
+        margin: 5px;
+        padding: 15px;
+    }
+    .coinRond-25 {
+        border-radius: 25px;
+    }
+</style>
 <div class="container-fluid px-0">
     {% include 'nav.html' with current_page="service" %}
     
-    <main class="container py-5" style="margin-top: 70px;">
+    <main class="container py-5 " style="margin-top: 15px;">
+        <div class="row blackBack text-white text-center mb-2 coinRond-25">
+            <h3 class="mt-4">Service : {{ service.nom }}</h3>
+            <p class="small typewriter"><i>{{ service.description }}</i></p>
+        </div>
         <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <!-- En-tête -->
-                <div class="bg-success text-white p-4 rounded-top">
-                    <h2 class="mb-0">
-                        <i class="fas fa-file-alt me-2"></i>Demande de Service
-                    </h2>
+           
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h4>Autres détails :</h4>
+                    {% if details %}
+                        <div class="mb-5">
+                            <ul class="list-group list-group-flush">
+                                {% for detail in details %}
+                                    <li class="detail-style list-unstyled">{{ detail }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
                 </div>
                 
-                <!-- Carte principale -->
-                <div class="card rounded-top-0 shadow-sm">
-                    <div class="card-body p-0">
-                        <div class="row g-0">
-                            <!-- Colonne info service -->
-                            <div class="col-md-5 p-4 bg-light">
-                                <div class="border-start border-4 border-success ps-3">
-                                    <h3 class="text-success">Service demandé :</h3>
-                                    <h4 class="mb-4">{{ service.nom }}</h4>
-                                    
-                                    <h3 class="text-success">Description :</h3>
-                                    <p>{{ service.description }}</p>
-                                    <h3 class="text-success">Prix : <del class="text-muted">{{service.prix1}} $</del> {{service.prix2}} $</h3>
-                                </div>
-                            </div>
-                            
-                            <!-- Colonne formulaire -->
-                            <div class="col-md-7 p-4">
-                                <form method="post">
-                                    {% csrf_token %}
-                                    
-                                    <!-- Affichage standard du formulaire -->
-                                    <div class="mb-4">
-                                        {{ form.as_p }}
-                                    </div>
-                                    
-                                    <!-- Boutons -->
-                                    <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
-                                        <a href="{% url 'app_sk:service' %}" class="btn btn-outline-secondary">
-                                            <i class="fas fa-arrow-left me-1"></i> Retour
-                                        </a>
-                                        <button type="submit" class="btn btn-success">
-                                            <i class="fas fa-paper-plane me-1"></i> Envoyer
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                <div class="col-md-6 p-4">
+                   <div class="card">
+                        <div class="card-header bg-success text-white">
+                            <h4>Remplissez le formulaire pour demander ce service</h4>
                         </div>
-                    </div>
+                        <div class="card-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                
+                                <!-- Affichage standard du formulaire -->
+                                <div class="mb-4">
+                                    {{ form.as_p }}
+                                </div>
+                                
+                                <!-- Boutons -->
+                                <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+                                    <button onclick="window.history.back()" class="btn btn-success">Retour</button>
+
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fas fa-paper-plane me-1"></i> Envoyer
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                   </div>
                 </div>
             </div>
         </div>
