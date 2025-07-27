@@ -18,8 +18,18 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 #TOCKAGE DES PHOTOS
-MEDIA_URL = '/media/'  # URL pour accéder aux fichiers
-MEDIA_ROOT = BASE_DIR / 'media'  # Dossier où les fichiers seront stockés
+# MEDIA_URL = '/media/'  
+# MEDIA_ROOT = BASE_DIR / 'media' 
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "dzxw9wf0y",
+    "API_KEY": "468371274929733",
+    "API_SECRET": "AHgK6inId1hDQZI5QghVgtckv3Y",
+}
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,10 +42,10 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'vezacancer.com',
-    'www.vezacancer.com',
-    'soinkenya.onrender.com'
-    ]
+    "vezacancer.com",
+    "www.vezacancer.com",
+    "soinkenya.onrender.com"
+]
 
 
 # Application definition
@@ -47,6 +57,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "cloudinary_storage",
+    "cloudinary",
     "app_sk",
 ]
 
@@ -157,7 +169,7 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 EMAIL_USE_TLS = True
 
-CONTACT_EMAIL = ['bestarkam1234@gmail.com', 'venancewabulasa@gmail.com']
+CONTACT_EMAIL = 'venancewabulasa@gmail.com'
 
 
 

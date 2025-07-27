@@ -27,5 +27,5 @@ urlpatterns = [
     path("", include(('app_sk.urls', 'app_sk'), namespace='app_sk')),
 ]
 
-if settings.DEBUG:  # Seulement en mode dev
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:  # Seulement en mode dev
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
