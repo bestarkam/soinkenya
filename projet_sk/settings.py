@@ -166,16 +166,11 @@ EMAIL_USE_TLS = True
 CONTACT_EMAIL = 'venancewabulasa@gmail.com'
 
 CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": "dzxw9wf0y",
-    "API_KEY": "468371274929733",
-    "API_SECRET": "AHgK6inId1hDQZI5QghVgtckv3Y",
+    "CLOUD_NAME": "dxkjfsctv",
+    "API_KEY": "444151684299262",
+    "API_SECRET": "eS85uRZKgt43MQ8lSpdnBNr160Q",
     "FOLDER": "veza",
 }
-cloudinary.config(
-    cloud_name="dzxw9wf0y",
-    api_key="468371274929733",
-    api_secret="AHgK6inId1hDQZI5QghVgtckv3Y"
-)
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
