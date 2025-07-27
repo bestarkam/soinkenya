@@ -21,13 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # MEDIA_URL = '/media/'  
 # MEDIA_ROOT = BASE_DIR / 'media' 
 
-CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": "dzxw9wf0y",
-    "API_KEY": "468371274929733",
-    "API_SECRET": "AHgK6inId1hDQZI5QghVgtckv3Y",
-}
 
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 
 
@@ -171,6 +165,13 @@ EMAIL_USE_TLS = True
 
 CONTACT_EMAIL = 'venancewabulasa@gmail.com'
 
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "dzxw9wf0y",
+    "API_KEY": "468371274929733",
+    "API_SECRET": "AHgK6inId1hDQZI5QghVgtckv3Y",
+    "FOLDER": "veza",
+}
 
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 
