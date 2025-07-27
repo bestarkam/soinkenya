@@ -165,12 +165,12 @@ EMAIL_USE_TLS = True
 
 CONTACT_EMAIL = 'venancewabulasa@gmail.com'
 
-# CLOUDINARY_STORAGE = {
-#     "CLOUD_NAME": "dzxw9wf0y",
-#     "API_KEY": "468371274929733",
-#     "API_SECRET": "AHgK6inId1hDQZI5QghVgtckv3Y",
-#     "FOLDER": "veza",
-# }
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "dzxw9wf0y",
+    "API_KEY": "468371274929733",
+    "API_SECRET": "AHgK6inId1hDQZI5QghVgtckv3Y",
+    "FOLDER": "veza",
+}
 cloudinary.config(
     cloud_name="dzxw9wf0y",
     api_key="468371274929733",
