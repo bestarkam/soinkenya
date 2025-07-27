@@ -13,13 +13,13 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from decouple import config
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#TOCKAGE DES PHOTOS
-# MEDIA_URL = '/media/'  
-# MEDIA_ROOT = BASE_DIR / 'media' 
 
 
 
@@ -165,12 +165,17 @@ EMAIL_USE_TLS = True
 
 CONTACT_EMAIL = 'venancewabulasa@gmail.com'
 
-CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": "dzxw9wf0y",
-    "API_KEY": "468371274929733",
-    "API_SECRET": "AHgK6inId1hDQZI5QghVgtckv3Y",
-    "FOLDER": "veza",
-}
+# CLOUDINARY_STORAGE = {
+#     "CLOUD_NAME": "dzxw9wf0y",
+#     "API_KEY": "468371274929733",
+#     "API_SECRET": "AHgK6inId1hDQZI5QghVgtckv3Y",
+#     "FOLDER": "veza",
+# }
+cloudinary.config(
+    cloud_name="dzxw9wf0y",
+    api_key="468371274929733",
+    api_secret="AHgK6inId1hDQZI5QghVgtckv3Y"
+)
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
