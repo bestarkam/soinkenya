@@ -51,9 +51,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "app_sk",
     "cloudinary_storage",
     "cloudinary",
-    "app_sk",
+    
 ]
 
 MIDDLEWARE = [
@@ -164,6 +165,10 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
 CONTACT_EMAIL = 'venancewabulasa@gmail.com'
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 
 CLOUDINARY_STORAGE = {
     "CLOUD_NAME": "dxkjfsctv",

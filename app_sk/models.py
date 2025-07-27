@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 
 
 class Service(models.Model):
@@ -9,7 +10,7 @@ class Service(models.Model):
     description = models.TextField(max_length=200, blank=False, null=False)
     phrasePhare = models.CharField(max_length=60, blank=True, null=True)
     disponible = models.BooleanField(default=False)
-    image = models.ImageField(upload_to="services/", null=True, blank=True)
+    image = CloudinaryField("image", folder="services", null=True, blank=True)
     prix1 = models.IntegerField(blank=True, null=True)
     prix2 = models.IntegerField(blank=True, null=True)
 
