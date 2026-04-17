@@ -94,31 +94,6 @@ python manage.py runserver
 
 Accédez à l'application sur [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
----
-
-## Variables d'environnement (`.env`)
-
-```env
-SECRET_KEY=votre_cle_secrete_django
-DEBUG=True
-
-# Base de données (PostgreSQL en production)
-DATABASE_URL=postgres://user:password@host:5432/dbname
-
-# Email (SMTP)
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_HOST_USER=votre@email.com
-EMAIL_HOST_PASSWORD=votre_mot_de_passe_application
-CONTACT_EMAIL=contact@soinkenya.com
-
-# Cloudinary
-CLOUDINARY_CLOUD_NAME=votre_cloud_name
-CLOUDINARY_API_KEY=votre_api_key
-CLOUDINARY_API_SECRET=votre_api_secret
-```
-
----
 
 ## Structure du projet
 
